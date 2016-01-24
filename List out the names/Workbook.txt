@@ -1,0 +1,112 @@
+E:\SQL_Server_Practice\1.xlsx
+E:\SQL_Server_Practice\2.xlsx
+E:\SQL_Server_Practice\3.xlsx
+E:\SQL_Server_Practice\X Factor contestants_new.xlsx
+E:\SQL_Server_Practice\Excel_BI\Bank holidays 2013-2014.xlsx
+E:\SQL_Server_Practice\Excel_BI\Excel calendar for 2013-2014.xlsx
+E:\SQL_Server_Practice\Excel_BI\MAM data.xlsx
+E:\SQL_Server_Practice\Excel_BI\MAM tables.xlsx
+E:\SQL_Server_Practice\Excel_BI\Stores.xlsx
+E:\SQL_Server_Practice\Excel_BI\Towns.xlsx
+E:\SQL_Server_Practice\Excel_BI\Transactions.xlsx
+E:\SQL_Server_Practice\Excel_BI\VBA courses.xlsx
+E:\SQL_Server_Practice\SSIS\Dino File.xlsx
+E:\SQL_Server_Practice\SSIS\Life is a Rollercoaster.xlsx
+E:\SQL_Server_Practice\SSIS\List of mentors.xlsx
+E:\SQL_Server_Practice\SSIS\Lunch menu.xlsx
+E:\SQL_Server_Practice\SSIS\Sunday Times rich list 2012.xlsx
+E:\SQL_Server_Practice\SSIS\X Factor contestants.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\CaculateFunctionDAX\DAX.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\CaculateFunctionDAX\DAXFunctions.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\CalculateColumn\CalcualtedColumn.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\CalculatedField\CalculatedField.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Calendar\Calendars.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Calendar\DateFunction.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Calendar\Holiday.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Calendar\Matrix.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\FiltersRankx\FilterRankX.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Hierachy\Hierachy.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\KeyPerformanceIndicators(KPIs)\KPIs.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Overview\Example1.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\Overview\Example2_HideTables.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerMap\PowerMap.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerPivot\LoadFromDifferentSources.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerPivot\Pivot1.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerPivot\PIVOT2.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerPivot\SqlData.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerQuery\Courses.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerQuery\VBA courses.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerQuery\WorldPopulation.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerView\Charts.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerView\Filters.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerView\MAM data.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerView\Map.xlsx
+E:\SQL_Server_Practice\Excel-Business-Intelligence-including-Power-Pivot-Power-VIew-Power-Query-Power-Map-\PowerView\PowerView.xlsx
+E:\SQL_Server_Practice\Excel_BI\CaculateFunctionDAX\DAX.xlsx
+E:\SQL_Server_Practice\Excel_BI\CaculateFunctionDAX\DAXFunctions.xlsx
+E:\SQL_Server_Practice\Excel_BI\CalculateColumn\CalcualtedColumn.xlsx
+E:\SQL_Server_Practice\Excel_BI\CalculatedField\CalculatedField.xlsx
+E:\SQL_Server_Practice\Excel_BI\Calendar\Calendars.xlsx
+E:\SQL_Server_Practice\Excel_BI\Calendar\DateFunction.xlsx
+E:\SQL_Server_Practice\Excel_BI\Calendar\Holiday.xlsx
+E:\SQL_Server_Practice\Excel_BI\Calendar\Matrix.xlsx
+E:\SQL_Server_Practice\Excel_BI\FiltersRankx\FilterRankX.xlsx
+E:\SQL_Server_Practice\Excel_BI\Hierachy\Hierachy.xlsx
+E:\SQL_Server_Practice\Excel_BI\KeyPerformanceIndicators(KPIs)\KPIs.xlsx
+E:\SQL_Server_Practice\Excel_BI\Overview\Example1.xlsx
+E:\SQL_Server_Practice\Excel_BI\Overview\Example2_HideTables.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerMap\PowerMap.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerPivot\LoadFromDifferentSources.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerPivot\Pivot1.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerPivot\PIVOT2.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerPivot\SqlData.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerQuery\Courses.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerQuery\VBA courses.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerQuery\WorldPopulation.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerView\Charts.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerView\Filters.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerView\MAM data.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerView\Map.xlsx
+E:\SQL_Server_Practice\Excel_BI\PowerView\PowerView.xlsx
+E:\SQL_Server_Practice\SSAS_Exercises\linked to staff table\staff table.xlsx
+E:\SQL_Server_Practice\SSIS\BasicTransformation\Females.xlsx
+E:\SQL_Server_Practice\SSIS\BasicTransformation\Males.xlsx
+E:\SQL_Server_Practice\SSIS\BasicTransformation\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\ConditionalSplit\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\DataTypeAndConversion\SQLServerCourses.xlsx
+E:\SQL_Server_Practice\SSIS\Debugging\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\Event-handlingLogging\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\ExpressionOtherConstraints\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\LookupTransformsCACHE\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\Mentor to Excel\MentorToExcel.xlsx
+E:\SQL_Server_Practice\SSIS\OtherForeachLoops\Proteges.xlsx
+E:\SQL_Server_Practice\SSIS\OtherForeachLoops\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\ScriptTasksCsharp\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SequenceContainersFORLoops\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\Variables\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS_Exercises\Mentors to Excel\ListOfMentor.xlsx
+E:\SQL_Server_Practice\SSAS_Exercises\SSAS-Exercises\linked to staff table\staff table.xlsx
+E:\SQL_Server_Practice\SSIS\ExpressionOtherConstraints\CopiedFolder\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\LoopingOverFiles\FolderContainingFiles\List of mentors.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\BasicTransformation\Females.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\BasicTransformation\Males.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\BasicTransformation\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\ConditionalSplit\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\DataTypeAndConversion\SQLServerCourses.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\Debugging\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\Event-handlingLogging\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\ExpressionOtherConstraints\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\LookupTransformsCACHE\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\OtherForeachLoops\Proteges.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\OtherForeachLoops\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\ScriptTasksCsharp\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\SequenceContainersFORLoops\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\Variables\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS_Exercises\DatabaseFiles\qf-1106\List of mentors.xlsx
+E:\SQL_Server_Practice\SSIS_Exercises\DatabaseFiles\qf-1107\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS_Exercises\DatabaseFiles\qf-1108\Dino File.xlsx
+E:\SQL_Server_Practice\SSIS_Exercises\DatabaseFiles\qf-1114\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS_Exercises\DatabaseFiles\qf-1115\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSRS\SQL-Server-SSRS\DocumentMap\DocmentMap2.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\ExpressionOtherConstraints\CopiedFolder\X Factor contestants.xlsx
+E:\SQL_Server_Practice\SSIS\SQL-Server-SSIS\LoopingOverFiles\FolderContainingFiles\List of mentors.xlsx

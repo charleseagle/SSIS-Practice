@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Mentor to Excel", "Mentor to Excel\Mentor to Excel.dtproj", "{E8C113D4-3C56-49DC-BDA9-FF8C6BCAB9CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8C113D4-3C56-49DC-BDA9-FF8C6BCAB9CF}.Development|Default.ActiveCfg = Development
+		{E8C113D4-3C56-49DC-BDA9-FF8C6BCAB9CF}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
