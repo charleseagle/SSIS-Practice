@@ -1,0 +1,1181 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/10/2015 2:06:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="EAGLE"
+  DTS:CreatorName="Eagle\Charleseagle"
+  DTS:DTSID="{8E7DBC34-A104-4B63-9C44-982D01938582}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.700.219"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{5CD5F038-5F1E-48F8-82F9-27E9E93D2038}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{F741F22A-C350-4DA3-8C4B-42C43638C269}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=E:\SQL_Server_Practice\SSIS\ConditionalSplit\X Factor contestants.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A9DFB4EF-62CD-4CE7-A306-13212C76A8CC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.0; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{22EB5CC9-DA5F-4F62-B0E9-6359DC6FCE02}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Finalist;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import X Factor finalists, marrying off Cheryl Cole"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C5F4BF40-1D6F-4F45-8991-A71B5D34793E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import X Factor finalists, marrying off Cheryl Cole"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cheryle has married a man"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Inputs[Derived Column Input].Columns[Mentor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Mentor"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Output].Columns[NewMentor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Output].Columns[NewMentor]"
+                      name="NewMentor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)[REPLACE](#{Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]},"Cole","Wakefield")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)REPLACE(Mentor,"Cole","Wakefield")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel worksheet of Finalists"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Finalists$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Series]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Series]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Series]"
+                      name="Series"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Category]"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Mentor]"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]"
+                      name="Mentor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Finished]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Finished]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Finished]"
+                      name="Finished"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Id]"
+                      dataType="r8"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Series]"
+                      dataType="r8"
+                      name="Series" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Category]"
+                      dataType="wstr"
+                      length="255"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Mentor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Mentor" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].ExternalColumns[Finished]"
+                      dataType="r8"
+                      name="Finished" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Id]"
+                      dataType="r8"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Series]"
+                      dataType="r8"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Series]"
+                      name="Series" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Mentor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Mentor]"
+                      name="Mentor" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Finished]"
+                      dataType="r8"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[Finished]"
+                      name="Finished" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Finalist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{22EB5CC9-DA5F-4F62-B0E9-6359DC6FCE02}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EAGLE.SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="r8"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Series]"
+                      cachedDataType="r8"
+                      cachedName="Series"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Series]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Series]" />
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mentor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Mentor"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mentor]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Mentor]" />
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Finished]"
+                      cachedDataType="r8"
+                      cachedName="Finished"
+                      externalMetadataColumnId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Finished]"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Finished]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Series]"
+                      dataType="i4"
+                      name="Series" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      dataType="wstr"
+                      length="255"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mentor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Mentor" />
+                    <externalMetadataColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Finished]"
+                      dataType="i4"
+                      name="Finished" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Reunit normal people and Cheryl metored"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1].Columns[Id]"
+                      cachedDataType="r8"
+                      cachedName="Id"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1].Columns[Series]"
+                      cachedDataType="r8"
+                      cachedName="Series"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Series]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Series]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1].Columns[Category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Category"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Category]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Category]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1].Columns[Mentor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Mentor"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Mentor]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1].Columns[Finished]"
+                      cachedDataType="r8"
+                      cachedName="Finished"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Finished]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Finished]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2].Columns[Id]"
+                      cachedDataType="r8"
+                      cachedName="Id"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2].Columns[Series]"
+                      cachedDataType="r8"
+                      cachedName="Series"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Series]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Series]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2].Columns[Category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Category"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Category]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Category]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2].Columns[Finished]"
+                      cachedDataType="r8"
+                      cachedName="Finished"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Finished]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Finished]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2].Columns[NewMentor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NewMentor"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Output].Columns[NewMentor]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Mentor]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Id]"
+                      dataType="r8"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Series]"
+                      dataType="r8"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Series]"
+                      name="Series" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Mentor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Mentor]"
+                      name="Mentor" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Finished]"
+                      dataType="r8"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1].Columns[Finished]"
+                      name="Finished" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Split metors"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input].Columns[Mentor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Mentor"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Cheyl Cole Finalists]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Cheyl Cole Finalists"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[FINDSTRING]([UPPER](#{Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]}),"CHERYL",1) &gt; 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">FINDSTRING(UPPER(Mentor),"CHERYL",1) &gt; 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Tulisa Finalists]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Tulisa Finalists"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[LEFT]([LOWER](#{Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output].Columns[Mentor]}),6) == "tulisa"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LEFT(LOWER(Mentor),6) == "tulisa"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Normal people]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Normal people"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Cheyl Cole Finalists]"
+              endId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Inputs[Derived Column Input]"
+              name="Cheyl Cole Finalists"
+              startId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Cheyl Cole Finalists]" />
+            <path
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Derived Column Output]"
+              endId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Excel Source Output]"
+              endId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Inputs[Conditional Split Input]"
+              name="Excel Source Output"
+              startId="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Normal people]"
+              endId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Inputs[Union All Input 1]"
+              name="Normal people"
+              startId="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors.Outputs[Normal people]" />
+            <path
+              refId="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Union All Output 1]"
+              endId="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F29EEC30-34C9-4B75-99CD-2A8D98BDF9CC}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import X Factor finalists, marrying off Cheryl Cole" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="130.5,56.5" />
+        <NodeLayout
+          Size="313,42"
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole"
+          TopLeft="148.5,157.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="212,98.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93,59"
+              Start="0,0"
+              End="93,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
+                  <mssgle:LineSegment
+                    End="89,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89,29.5"
+                    Point2="93,29.5"
+                    Point3="93,33.5" />
+                  <mssgle:LineSegment
+                    End="93,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import X Factor finalists, marrying off Cheryl Cole">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists"
+          TopLeft="269,16" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination"
+          TopLeft="347,352" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole\Split metors"
+          TopLeft="304.5,105.5" />
+        <NodeLayout
+          Size="276,42"
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole\Reunit normal people and Cheryl metored"
+          TopLeft="284,274" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole\Cheryle has married a man"
+          TopLeft="458,187" />
+        <EdgeLayout
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Union All Output 1]"
+          TopLeft="422,316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,36"
+              Start="0,0"
+              End="10.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="6.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,18"
+                    Point2="10.5,18"
+                    Point3="10.5,22" />
+                  <mssgle:LineSegment
+                    End="10.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Normal people]"
+          TopLeft="350.833333333333,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5,126.5"
+              Start="0,0"
+              End="26.5,119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.7183708838822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.7183708838822"
+                    Point2="0,63.7183708838822"
+                    Point3="4,63.7183708838822" />
+                  <mssgle:LineSegment
+                    End="22.5,63.7183708838822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,63.7183708838822"
+                    Point2="26.5,63.7183708838822"
+                    Point3="26.5,67.7183708838822" />
+                  <mssgle:LineSegment
+                    End="26.5,119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.28634765625,68.7183708838822,65.0726953125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Excel Source Output]"
+          TopLeft="372.5,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.5"
+              Start="0,0"
+              End="0,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Derived Column Output]"
+          TopLeft="561,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94.3333333333334,45"
+              Start="0,0"
+              End="-94.3333333333334,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8443804034582" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8443804034582"
+                    Point2="0,26.8443804034582"
+                    Point3="-4,26.8443804034582" />
+                  <mssgle:LineSegment
+                    End="-90.3333333333334,26.8443804034582" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90.3333333333334,26.8443804034582"
+                    Point2="-94.3333333333334,26.8443804034582"
+                    Point3="-94.3333333333334,30.8443804034582" />
+                  <mssgle:LineSegment
+                    End="-94.3333333333334,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import X Factor finalists, marrying off Cheryl Cole.Paths[Cheyl Cole Finalists]"
+          TopLeft="372,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="189,39.5"
+              Start="0,0"
+              End="189,32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.75"
+                    Point2="0,19.75"
+                    Point3="4,19.75" />
+                  <mssgle:LineSegment
+                    End="185,19.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="185,19.75"
+                    Point2="189,19.75"
+                    Point3="189,23.75" />
+                  <mssgle:LineSegment
+                    End="189,32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="51.48490234375,24.75,86.0301953125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import X Factor finalists, marrying off Cheryl Cole\Excel worksheet of Finalists">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import X Factor finalists, marrying off Cheryl Cole\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,21 @@
+Rank,Millions,Name,Country,Source of wealth
+1,12700,Lakshmi Mittal and family, India,Steel
+2,12315,Alisher Usmanov, Russia,Mining and Investment
+3,9500,Roman Abramovich, Russia,Oil and industry
+4,8600,Sri and Gopi Hinduja, India,Industry and Finance
+5,7580,Leonard Blavatnik, Russia,Industry
+6,7400,Ernesto and Kirsty Bertarelli, Switzerland &  United Kingdom,Pharmaceuticals
+7,7350,Gerald Grosvenor, 6th Duke of Westminster, United Kingdom,Property
+8,7083,David and Simon Reuben, United Kingdom,Property and Internet
+9,6600,John Fredriksen and family, Norway,Shipping and oil services
+10,5900,Galen Weston, George Weston and family, Canada,Retailing
+11,5490,Charlene de Carvalho-Heineken and Michel Carvalho, Netherlands,Inheritance, banking, brewing (Heineken)
+12,4300,Hans Rausing and family, Sweden,Packaging
+13,4100,Joseph Lau, China,Property
+14,,Paul Chuckle, UK, IT Training
+15,4300,Nicky Oppenheimer, South Africa,Mining, Diamonds
+16,3900,Kirsten & Jorn Rausing, Sweden,Inheritance, Investment
+17,3400,Sir Richard Branson, United Kingdom,Internet, Transport, Finance
+18,3300,Sir Philip and Lady Green, United Kingdom,Retailing
+19,,Barry Chuckle, UK, Comedy
+20,,Roger Chuckle,UK,SSIS consultancy
